@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 280px;
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: 'Noto Sans SC', sans-serif;
+    padding: 18px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .icon {
+    font-family: 'JetBrains Mono', monospace;
+    color: #58a6ff;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #f0f6fc;
+  }
+
+  .sub { font-size: 11px; color: #8b949e; margin-bottom: 14px; line-height: 1.6; }
+
+  label {
+    display: block;
+    font-size: 11px;
+    color: #8b949e;
+    margin-bottom: 6px;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px 10px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #e6edf3;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 10px;
+  }
+  input:focus { border-color: #58a6ff; }
+  input::placeholder { color: #484f58; }
+
+  button {
+    width: 100%;
+    padding: 8px;
+    background: #238636;
+    border: 1px solid #2ea043;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 13px;
+    font-family: 'Noto Sans SC', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  button:hover { background: #2ea043; }
+
+  .status {
+    margin-top: 10px;
+    font-size: 11px;
+    text-align: center;
+    color: #3fb950;
+    min-height: 16px;
+  }
+
+  .tip {
+    margin-top: 14px;
+    padding: 8px 10px;
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 6px;
+    font-size: 11px;
+    color: #8b949e;
+    line-height: 1.6;
+  }
+  .tip a { color: #58a6ff; text-decoration: none; }
+  .tip a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="header">
+  <span class="icon">⟡</span>
+  <h1>一键翻译</h1>
+</div>
+
+<p class="sub">在 GitHub 上选中任意英文文字，即可弹出翻译气泡，并支持自由复制。</p>
+
+<label>DeepSeek API Key</label>
+<input type="password" id="apiKey" placeholder="sk-..." />
+<button id="save">保存</button>
+<div class="status" id="status"></div>
+
+<div class="tip">
+  没有 API Key？前往
+  <a href="https://platform.deepseek.com/" target="_blank">platform.deepseek.com</a>
+  注册获取，价格非常便宜。
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>

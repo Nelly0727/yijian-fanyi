@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "一键翻译",
+  "version": "1.0",
+  "description": "在 GitHub 上划选文字即可翻译，并解除复制限制",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://github.com/*",
+    "https://api.deepseek.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"],
+      "css": ["bubble.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "GitHub 助手"
+  }
+}
